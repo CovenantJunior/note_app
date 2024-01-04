@@ -10,6 +10,6 @@ class NotePage extends StatefulWidget {
 class _NotePageState extends State<NotePage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold();
   }
 }
