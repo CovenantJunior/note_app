@@ -10,6 +10,17 @@ class NotePage extends StatefulWidget {
 class _NotePageState extends State<NotePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Notes"),
+        titleTextStyle: const TextStyle(
+          fontFamily: "Quicksand",
+          color: Colors.blueGrey,
+          fontWeight: FontWeight.bold,
+          fontSize: 30
+        ),
+        centerTitle: true,
+      ),
+    );
   }
 }
