@@ -202,7 +202,8 @@ class _NotePageState extends State<NotePage> {
                     note.note,
                     style: const TextStyle(
                       fontFamily: "Quicksand",
-                      fontWeight: FontWeight.w600
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16
                     ),
                   ),
                   Row(
