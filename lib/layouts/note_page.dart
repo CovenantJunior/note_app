@@ -16,6 +16,12 @@ class _NotePageState extends State<NotePage> {
       context: context,
       builder: (context) => const AlertDialog(
         content: TextField(),
+        actions: [
+          Icon(
+            Icons.save,
+            color: Colors.blueGrey,
+          )
+        ],
       )
     );
   }
