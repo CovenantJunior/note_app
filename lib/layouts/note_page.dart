@@ -145,7 +145,16 @@ class _NotePageState extends State<NotePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Notes"),
+        title: const Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Notes"),
+            Icon(
+              Icons.bookmark_add_rounded,
+              color: Colors.blueGrey,
+            )
+          ],
+        ),
         titleTextStyle: const TextStyle(
           fontFamily: "Quicksand",
           color: Colors.blueGrey,
