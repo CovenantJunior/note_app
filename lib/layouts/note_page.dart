@@ -79,7 +79,38 @@ class _NotePageState extends State<NotePage> {
 
   // Delete
   void deleteNote(int id) {
-    context.read<NoteDatabase>().deleteNote(id);
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        content: const Text(
+          "Delete Note?",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 20,
+            fontFamily: 'Quicksand',
+          ),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              context.read<NoteDatabase>().deleteNote(id);
+              Navigator.pop(context);
+            },
+            icon: const Icon(
+              Icons.done,
+            ),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(
+              Icons.cancel_outlined,
+            ),
+          ),
+        ],
+      ) 
+    );
   }
 
 
