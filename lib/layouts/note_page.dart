@@ -8,6 +8,23 @@ class NotePage extends StatefulWidget {
 }
 
 class _NotePageState extends State<NotePage> {
+  // CUD Operations
+
+  // Create
+  void createNote() {
+    showDialog(
+      context: context,
+      builder: (context) => const AlertDialog(
+        content: TextField(),
+      )
+    );
+  }
+
+  // Update
+
+  // Delete
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,10 +38,12 @@ class _NotePageState extends State<NotePage> {
         ),
         centerTitle: true,
       ),
-      floatingActionButton: const FloatingActionButton(
-        onPressed: null,
-        child: Icon(
-          Icons.add
+      floatingActionButton: FloatingActionButton(
+        onPressed: createNote,
+        backgroundColor: Colors.blueGrey[200],
+        child: const Icon(
+          Icons.add,
+          color: Colors.white,
         ),
       ),
     );
