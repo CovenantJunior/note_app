@@ -33,7 +33,7 @@ class _NotePageState extends State<NotePage> {
             onPressed: () {
               context.read<NoteDatabase>().addNote(textController.text);
               Navigator.pop(context);
-              textController.text = '';
+              textController.clear();
             }
           )
         ],
