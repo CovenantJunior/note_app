@@ -51,6 +51,30 @@ class _NotePageState extends State<NotePage> {
   }
 
   // Update
+  void editNote() {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        content: TextField(
+          controller: textController,
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.save),
+            color: Colors.blueGrey,
+            onPressed: () {
+              String text = textController.text;
+              if (text.isNotEmpty) {
+                context.read<NoteDatabase>().addNote(text);
+                Navigator.pop(context);
+                textController.clear();
+              }
+            }
+          )
+        ],
+      )
+    );
+  }
 
   // Delete
 
@@ -115,9 +139,9 @@ class _NotePageState extends State<NotePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: createNote,
         backgroundColor: Colors.blueGrey[200],
-        child: const Icon(
+        child: Icon(
           Icons.add,
-          color: Colors.blueGrey,
+          color: Colors.blueGrey[900],
         ),
       ),
     );
