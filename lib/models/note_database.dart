@@ -39,12 +39,21 @@ class NoteDatabase {
   }
 
   // UPDATE
-  void updateNote(int id,String note) async {
+  void updateNote(int id, String note) async {
     final existingNote = await isar.notes.get(id);
     if (existingNote != null) {
       existingNote.note = note;
       await isar.writeTxn(() => isar.notes.put(existingNote));
     }
+
+    // Update Note List
+    fetchNote();
+  }
+
+
+  // DELETE
+  void deleteNote(int id) async {
+    await isar.notes.delete(id);
 
     // Update Note List
     fetchNote();
