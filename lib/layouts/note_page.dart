@@ -12,6 +12,7 @@ class NotePage extends StatefulWidget {
 class _NotePageState extends State<NotePage> {
   @override
   void initState() {
+    super.initState();
     readNotes();
   }
 
