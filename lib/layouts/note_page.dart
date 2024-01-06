@@ -27,11 +27,17 @@ class _NotePageState extends State<NotePage> {
             color: Colors.blueGrey,
             onPressed: () {
               context.read<NoteDatabase>().addNote(textController.text);
+              Navigator.pop(context);
             }
           )
         ],
       )
     );
+  }
+
+  // Read
+  void readNotes() {
+    context.watch<NoteDatabase>().fetchNote();
   }
 
   // Update
@@ -41,6 +47,8 @@ class _NotePageState extends State<NotePage> {
 
   @override
   Widget build(BuildContext context) {
+    List notes = context.watch<NoteDatabase>().notes;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Notes"),
@@ -52,12 +60,29 @@ class _NotePageState extends State<NotePage> {
         ),
         centerTitle: true,
       ),
+      body: notes.isNotEmpty  ? ListView.builder(
+        itemCount: notes.length,
+        itemBuilder: (context, index) {
+        final note = notes[index];
+        return Card(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Text(note.note),
+          ),
+        );
+      }) : const Center(child: Text(
+          "No notes yet, tap the icon below to add",
+          style: TextStyle(
+            color: Colors.blueGrey,
+          ),
+          )
+        ),
       floatingActionButton: FloatingActionButton(
         onPressed: createNote,
         backgroundColor: Colors.blueGrey[200],
         child: const Icon(
           Icons.add,
-          color: Colors.white,
+          color: Colors.blueGrey,
         ),
       ),
     );
