@@ -37,4 +37,13 @@ class NoteDatabase {
     notes.clear();
     notes.addAll(currentNotes);
   }
+
+  // UPDATE
+  void updateNote(int id,String note) async {
+    final existingNote = await isar.notes.get(id);
+    if (existingNote != null) {
+      existingNote.note = note;
+      await isar.writeTxn(() => isar.notes.put(existingNote));
+    }
+  }
 }
