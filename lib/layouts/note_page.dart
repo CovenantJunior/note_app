@@ -40,7 +40,12 @@ class _NotePageState extends State<NotePage> {
                 Navigator.pop(context);
                 textController.clear();
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Note secured')));
+                  const SnackBar(content: Text(
+                    'Note secured',
+                    style: TextStyle(
+                      fontFamily: "Quicksand",
+                    )
+                  )));
               }
             }
           )
@@ -74,7 +79,12 @@ class _NotePageState extends State<NotePage> {
                 Navigator.pop(context);
                 textController.clear();
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Updated and fresh!')));
+                  const SnackBar(content: Text(
+                    'Updated and fresh!',
+                    style: TextStyle(
+                      fontFamily: "Quicksand",
+                    )
+                  )));
               }
             }
           )
@@ -102,7 +112,12 @@ class _NotePageState extends State<NotePage> {
               context.read<NoteDatabase>().deleteNote(id);
               Navigator.pop(context);
               ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Poof! Gone like the wind')));
+                  const SnackBar(content: Text(
+                    'Poof! Gone like the wind',
+                    style: TextStyle(
+                      fontFamily: "Quicksand",
+                    )
+                  )));
             },
             icon: const Icon(
               Icons.done,
@@ -135,7 +150,12 @@ class _NotePageState extends State<NotePage> {
         )
     );
     ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Copied and locked! Paste at your leisure!')));
+        const SnackBar(content: Text(
+          'Copied and locked! Paste at your leisure!',
+          style: TextStyle(
+            fontFamily: "Quicksand",
+          )
+        )));
   }
 
 
