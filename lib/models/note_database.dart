@@ -8,20 +8,33 @@ class NoteDatabase {
   // Initialize DB
   static Future<void> initialize() async {
     final dir = await getApplicationDocumentsDirectory();
-    final isar = Isar.open(
+    isar = Isar.open(
       [NoteSchema],
       directory: dir.path
-    );
+    ) as Isar;
   }
 
-  // List Notes
+  // List of all Notes
   List<Note> notes = [];
 
-  // Handle CRUD operations
+  /* Handle CRUD operations */
 
   // CREATE
-  void addNote(String note, DateTime created) async {
+  void addNote(String note) async {
     final newNote = Note()..note = note..created = DateTime.now();
+
+    // Save to DB
     await isar.writeTxn(() => isar.notes.put(newNote));
+    
+    // Update Note List
+    fetchNote();
+  }
+
+
+  // READ
+  void fetchNote() async {
+    final currentNotes = isar.notes.where().findAllSync();
+    notes.clear();
+    notes.addAll(currentNotes);
   }
 }
