@@ -14,6 +14,14 @@ class NoteDatabase {
     );
   }
 
+  // List Notes
+  List<Note> notes = [];
+
   // Handle CRUD operations
 
+  // CREATE
+  void addNote(String note, DateTime created) async {
+    final newNote = Note()..note = note..created = DateTime.now();
+    await isar.writeTxn(() => isar.notes.put(newNote));
+  }
 }
