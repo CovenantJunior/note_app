@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:note_app/models/note_database.dart';
 import 'package:provider/provider.dart';
+import 'package:share_plus/share_plus.dart';
 
 class NotePage extends StatefulWidget {
   const NotePage({super.key});
@@ -113,6 +115,21 @@ class _NotePageState extends State<NotePage> {
     );
   }
 
+  // Miscellaneous
+
+  // Share Note
+  void share(String note) {
+    Share.share(note);
+  }
+
+  void copy(String note) {
+    Clipboard.setData (
+      ClipboardData(
+        text: note
+        )
+    );
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -162,9 +179,20 @@ class _NotePageState extends State<NotePage> {
                           color: Colors.blueGrey,
                         ),
                       ),
-                      const IconButton(
-                        onPressed: null,
-                        icon: Icon(
+                      IconButton(
+                        onPressed: () {
+                          share(note.note);
+                        },
+                        icon: const Icon(
+                          Icons.copy,
+                          color: Colors.blueGrey,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          copy(note.note);
+                        },
+                        icon: const Icon(
                           Icons.share,
                           color: Colors.blueGrey,
                         ),
