@@ -65,17 +65,26 @@ class _NotePageState extends State<NotePage> {
         ),
         centerTitle: true,
       ),
-      body: notes.isNotEmpty  ? ListView.builder(
-        itemCount: notes.length,
-        itemBuilder: (context, index) {
-        final note = notes[index];
-        return Card(
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Text(note.note),
-          ),
-        );
-      }) : const Center(child: Text(
+      body: notes.isNotEmpty  ? Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListView.builder(
+          itemCount: notes.length,
+          itemBuilder: (context, index) {
+          final note = notes[index];
+          return Card(
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Text(
+                note.note,
+                style: const TextStyle(
+                  fontFamily: "Quicksand",
+                  fontWeight: FontWeight.w600
+                ),
+              ),
+            ),
+          );
+        }),
+      ) : const Center(child: Text(
           "No notes yet, tap the icon below to add",
           style: TextStyle(
             color: Colors.blueGrey,
