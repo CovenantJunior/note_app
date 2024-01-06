@@ -14,15 +14,14 @@ void main() async {
         // Note Database Provider
         ChangeNotifierProvider(
           create: (context) => NoteDatabase(),
-          child: const MyApp()
         ),
-        
+
         // Theme Provider
         ChangeNotifierProvider(
           create: (context) => ThemeProvider(),
-          child: const MyApp()
         )
       ],
+      child: const MyApp()
     )
   );
 }
@@ -33,9 +32,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: Provider.of<ThemeProvider>(context).themeData,
       debugShowCheckedModeBanner: false,
-      home: NotePage(),
+      home: const NotePage(),
     );
   }
 }
