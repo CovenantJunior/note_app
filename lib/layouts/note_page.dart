@@ -82,6 +82,7 @@ class _NotePageState extends State<NotePage> {
               padding: const EdgeInsets.all(20.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
                     note.note,
