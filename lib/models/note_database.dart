@@ -55,7 +55,7 @@ class NoteDatabase extends ChangeNotifier{
 
   // DELETE
   void deleteNote(int id) async {
-    await isar.notes.delete(id);
+    await isar.writeTxn(() => isar.notes.delete(id));
 
     // Update Note List
     fetchNote();

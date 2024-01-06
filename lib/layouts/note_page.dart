@@ -78,6 +78,9 @@ class _NotePageState extends State<NotePage> {
   }
 
   // Delete
+  void deleteNote(int id) {
+    context.read<NoteDatabase>().deleteNote(id);
+  }
 
 
   @override
@@ -135,9 +138,11 @@ class _NotePageState extends State<NotePage> {
                           color: Colors.blueGrey,
                         ),
                       ),
-                      const IconButton(
-                        onPressed: null,
-                        icon: Icon(
+                      IconButton(
+                        onPressed: () {
+                          deleteNote(note.id);
+                        },
+                        icon: const Icon(
                           Icons.delete,
                           color: Colors.blueGrey,
                         ),
