@@ -69,6 +69,7 @@ class _NotePageState extends State<NotePage> {
           fontSize: 30
         ),
         centerTitle: true,
+        backgroundColor: Colors.blueGrey[50],
       ),
 
       body: notes.isNotEmpty  ? Padding(
