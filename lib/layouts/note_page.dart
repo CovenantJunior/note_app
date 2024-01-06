@@ -21,6 +21,12 @@ class _NotePageState extends State<NotePage> {
         ),
         centerTitle: true,
       ),
+      floatingActionButton: const FloatingActionButton(
+        onPressed: null,
+        child: Icon(
+          Icons.add
+        ),
+      ),
     );
   }
 }
