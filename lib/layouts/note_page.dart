@@ -8,15 +8,18 @@ class NotePage extends StatefulWidget {
 }
 
 class _NotePageState extends State<NotePage> {
-  // CUD Operations
+  // Access user input
+  final textController = TextEditingController();
 
   // Create
   void createNote() {
     showDialog(
       context: context,
-      builder: (context) => const AlertDialog(
-        content: TextField(),
-        actions: [
+      builder: (context) => AlertDialog(
+        content: TextField(
+          controller: textController,
+        ),
+        actions: const [
           Icon(
             Icons.save,
             color: Colors.blueGrey,
