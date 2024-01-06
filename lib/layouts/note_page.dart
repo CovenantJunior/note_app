@@ -10,6 +10,11 @@ class NotePage extends StatefulWidget {
 }
 
 class _NotePageState extends State<NotePage> {
+  @override
+  void initState() {
+    readNotes();
+  }
+
   // Access user input
   final textController = TextEditingController();
 
@@ -37,7 +42,7 @@ class _NotePageState extends State<NotePage> {
 
   // Read
   void readNotes() {
-    context.watch<NoteDatabase>().fetchNote();
+    context.read<NoteDatabase>().fetchNote();
   }
 
   // Update
