@@ -67,6 +67,7 @@ class _NotePageState extends State<NotePage> {
         ),
         centerTitle: true,
       ),
+
       body: notes.isNotEmpty  ? Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView.builder(
@@ -76,12 +77,24 @@ class _NotePageState extends State<NotePage> {
           return Card(
             child: Padding(
               padding: const EdgeInsets.all(20.0),
-              child: Text(
-                note.note,
-                style: const TextStyle(
-                  fontFamily: "Quicksand",
-                  fontWeight: FontWeight.w600
-                ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    note.note,
+                    style: const TextStyle(
+                      fontFamily: "Quicksand",
+                      fontWeight: FontWeight.w600
+                    ),
+                  ),
+                  const Row(
+                    children: [
+                      IconButton.filled(onPressed: null, icon: Icon(Icons.edit)),
+                      IconButton.filled(onPressed: null, icon: Icon(Icons.share)),
+                      IconButton.filled(onPressed: null, icon: Icon(Icons.delete)),
+                    ],
+                  ),
+                ],
               ),
             ),
           );
@@ -93,6 +106,7 @@ class _NotePageState extends State<NotePage> {
           ),
           )
         ),
+
       floatingActionButton: FloatingActionButton(
         onPressed: createNote,
         backgroundColor: Colors.blueGrey[200],
