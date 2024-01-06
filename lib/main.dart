@@ -11,10 +11,13 @@ void main() async {
     
     MultiProvider(
       providers: [
+        // Note Database Provider
         ChangeNotifierProvider(
           create: (context) => NoteDatabase(),
           child: const MyApp()
         ),
+        
+        // Theme Provider
         ChangeNotifierProvider(
           create: (context) => ThemeProvider(),
           child: const MyApp()
