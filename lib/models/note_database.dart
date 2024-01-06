@@ -45,5 +45,8 @@ class NoteDatabase {
       existingNote.note = note;
       await isar.writeTxn(() => isar.notes.put(existingNote));
     }
+
+    // Update Note List
+    fetchNote();
   }
 }
