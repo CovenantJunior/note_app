@@ -23,10 +23,10 @@ class _NotePageState extends State<NotePage> {
         ),
         actions: [
           IconButton(
-            icon: Icons.save,
+            icon: const Icon(Icons.save),
             color: Colors.blueGrey,
             onPressed: () {
-              context.read<NoteDatabase>().addNote(textController.text)
+              context.read<NoteDatabase>().addNote(textController.text);
             }
           )
         ],
