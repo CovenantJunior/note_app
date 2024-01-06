@@ -51,7 +51,8 @@ class _NotePageState extends State<NotePage> {
   }
 
   // Update
-  void editNote() {
+  void editNote(int id, note) {
+    textController.text = note;
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -65,7 +66,7 @@ class _NotePageState extends State<NotePage> {
             onPressed: () {
               String text = textController.text;
               if (text.isNotEmpty) {
-                context.read<NoteDatabase>().addNote(text);
+                context.read<NoteDatabase>().updateNote(id, text);
                 Navigator.pop(context);
                 textController.clear();
               }
@@ -116,11 +117,31 @@ class _NotePageState extends State<NotePage> {
                       fontWeight: FontWeight.w600
                     ),
                   ),
-                  const Row(
+                  Row(
                     children: [
-                      IconButton.filled(onPressed: null, icon: Icon(Icons.edit)),
-                      IconButton.filled(onPressed: null, icon: Icon(Icons.share)),
-                      IconButton.filled(onPressed: null, icon: Icon(Icons.delete)),
+                      IconButton(
+                        onPressed: () {
+                          editNote(note.id, note.note);
+                        },
+                        icon: const Icon(
+                          Icons.edit,
+                          color: Colors.blueGrey,
+                        ),
+                      ),
+                      const IconButton(
+                        onPressed: null,
+                        icon: Icon(
+                          Icons.share,
+                          color: Colors.blueGrey,
+                        ),
+                      ),
+                      const IconButton(
+                        onPressed: null,
+                        icon: Icon(
+                          Icons.delete,
+                          color: Colors.blueGrey,
+                        ),
+                      ),
                     ],
                   ),
                 ],
