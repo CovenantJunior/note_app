@@ -32,9 +32,12 @@ class _NotePageState extends State<NotePage> {
             icon: const Icon(Icons.save),
             color: Colors.blueGrey,
             onPressed: () {
-              context.read<NoteDatabase>().addNote(textController.text);
-              Navigator.pop(context);
-              textController.clear();
+              String text = textController.text;
+              if (text.isNotEmpty) {
+                context.read<NoteDatabase>().addNote(text);
+                Navigator.pop(context);
+                textController.clear();
+              }
             }
           )
         ],
