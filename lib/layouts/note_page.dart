@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/models/note_database.dart';
+import 'package:provider/provider.dart';
 
 class NotePage extends StatefulWidget {
   const NotePage({super.key});
@@ -19,10 +21,13 @@ class _NotePageState extends State<NotePage> {
         content: TextField(
           controller: textController,
         ),
-        actions: const [
-          Icon(
-            Icons.save,
+        actions: [
+          IconButton(
+            icon: Icons.save,
             color: Colors.blueGrey,
+            onPressed: () {
+              context.read<NoteDatabase>().addNote(textController.text)
+            }
           )
         ],
       )
