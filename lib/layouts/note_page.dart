@@ -39,6 +39,8 @@ class _NotePageState extends State<NotePage> {
                 context.read<NoteDatabase>().addNote(text);
                 Navigator.pop(context);
                 textController.clear();
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Note secured')));
               }
             }
           )
@@ -71,6 +73,8 @@ class _NotePageState extends State<NotePage> {
                 context.read<NoteDatabase>().updateNote(id, text);
                 Navigator.pop(context);
                 textController.clear();
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Updated and fresh!')));
               }
             }
           )
@@ -97,6 +101,8 @@ class _NotePageState extends State<NotePage> {
             onPressed: () {
               context.read<NoteDatabase>().deleteNote(id);
               Navigator.pop(context);
+              ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Poof! Gone like the wind')));
             },
             icon: const Icon(
               Icons.done,
@@ -128,6 +134,8 @@ class _NotePageState extends State<NotePage> {
         text: note
         )
     );
+    ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Copied and locked! Paste at your leisure!')));
   }
 
 
@@ -181,7 +189,7 @@ class _NotePageState extends State<NotePage> {
                       ),
                       IconButton(
                         onPressed: () {
-                          share(note.note);
+                          copy(note.note);
                         },
                         icon: const Icon(
                           Icons.copy,
@@ -190,7 +198,7 @@ class _NotePageState extends State<NotePage> {
                       ),
                       IconButton(
                         onPressed: () {
-                          copy(note.note);
+                          share(note.note);
                         },
                         icon: const Icon(
                           Icons.share,
