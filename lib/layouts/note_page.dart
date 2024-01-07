@@ -263,10 +263,10 @@ class _NotePageState extends State<NotePage> {
 
       floatingActionButton: FloatingActionButton(
         onPressed: createNote,
-        backgroundColor: Colors.blueGrey[200],
-        child: Icon(
+        backgroundColor: Theme.of(context).colorScheme.background,
+        child: const Icon(
           Icons.add,
-          color: Colors.blueGrey[900],
+          color: Colors.blueGrey,
         ),
       ),
     );
