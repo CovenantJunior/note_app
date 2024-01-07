@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
 class NoteDrawerTile extends StatefulWidget {
-  const NoteDrawerTile({super.key, required String title, required Icon leading, required onTap});
+  const NoteDrawerTile({
+    super.key,
+    required String title,
+    required Icon leading,
+    required onTap
+  });
 
   @override
   State<NoteDrawerTile> createState() => _NoteDrawerTileState();
@@ -9,7 +14,7 @@ class NoteDrawerTile extends StatefulWidget {
 
 class _NoteDrawerTileState extends State<NoteDrawerTile> {
   late final String title;
-  late final String leading;
+  late final Widget leading;
   late final void Function()? onTap;
 
   @override
@@ -17,7 +22,7 @@ class _NoteDrawerTileState extends State<NoteDrawerTile> {
     return Scaffold(
       body: ListTile(
         title: Text(title),
-        leading: Text(leading),
+        leading: leading,
         onTap: onTap,
       ),
     );
