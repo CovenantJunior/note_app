@@ -4,7 +4,7 @@ import 'package:note_app/theme/theme.dart';
 
 class ThemeProvider extends ChangeNotifier {
   // Initial Theme
-  ThemeData _themeData = darkMode;
+  ThemeData _themeData = lightMode;
 
   // Access theme from other parts of the code
   ThemeData get themeData => _themeData;

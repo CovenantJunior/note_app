@@ -168,21 +168,21 @@ class _NotePageState extends State<NotePage> {
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text("Notes"),
+            Text(
+              "Notes",
+              style: TextStyle(
+                fontFamily: "Quicksand",
+                fontWeight: FontWeight.bold,
+                fontSize: 30
+              ),
+            ),
             Icon(
               Icons.bookmark_add_rounded,
               // color: Colors.blueGrey,
             ),
           ],
         ),
-        titleTextStyle: const TextStyle(
-          fontFamily: "Quicksand",
-          // color: Colors.blueGrey,
-          fontWeight: FontWeight.bold,
-          fontSize: 30
-        ),
         centerTitle: true,
-        backgroundColor: Theme.of(context).colorScheme.background,
       ),
 
       drawer: const Drawer(),
