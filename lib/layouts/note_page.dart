@@ -32,7 +32,7 @@ class _NotePageState extends State<NotePage> {
         actions: [
           IconButton(
             icon: const Icon(Icons.save),
-            color: Colors.blueGrey,
+            // color: Colors.blueGrey,
             onPressed: () {
               String text = textController.text;
               if (text.isNotEmpty) {
@@ -71,7 +71,7 @@ class _NotePageState extends State<NotePage> {
         actions: [
           IconButton(
             icon: const Icon(Icons.save),
-            color: Colors.blueGrey,
+            // color: Colors.blueGrey,
             onPressed: () {
               String text = textController.text;
               if (text.isNotEmpty) {
@@ -171,13 +171,13 @@ class _NotePageState extends State<NotePage> {
             Text("Notes"),
             Icon(
               Icons.bookmark_add_rounded,
-              color: Colors.blueGrey,
+              // color: Colors.blueGrey,
             ),
           ],
         ),
         titleTextStyle: const TextStyle(
           fontFamily: "Quicksand",
-          color: Colors.blueGrey,
+          // color: Colors.blueGrey,
           fontWeight: FontWeight.bold,
           fontSize: 30
         ),
@@ -216,7 +216,7 @@ class _NotePageState extends State<NotePage> {
                         },
                         icon: const Icon(
                           Icons.edit,
-                          color: Colors.blueGrey,
+                          // color: Colors.blueGrey,
                         ),
                       ),
                       IconButton(
@@ -225,7 +225,7 @@ class _NotePageState extends State<NotePage> {
                         },
                         icon: const Icon(
                           Icons.copy,
-                          color: Colors.blueGrey,
+                          // color: Colors.blueGrey,
                         ),
                       ),
                       IconButton(
@@ -234,7 +234,7 @@ class _NotePageState extends State<NotePage> {
                         },
                         icon: const Icon(
                           Icons.share,
-                          color: Colors.blueGrey,
+                          // color: Colors.blueGrey,
                         ),
                       ),
                       IconButton(
@@ -243,7 +243,7 @@ class _NotePageState extends State<NotePage> {
                         },
                         icon: const Icon(
                           Icons.delete,
-                          color: Colors.blueGrey,
+                          // color: Colors.blueGrey,
                         ),
                       ),
                     ],
@@ -256,7 +256,7 @@ class _NotePageState extends State<NotePage> {
       ) : const Center(child: Text(
           "No notes yet, tap the icon below to add",
           style: TextStyle(
-            color: Colors.blueGrey,
+            // color: Colors.blueGrey,
           ),
           )
         ),
@@ -266,7 +266,7 @@ class _NotePageState extends State<NotePage> {
         backgroundColor: Theme.of(context).colorScheme.background,
         child: const Icon(
           Icons.add,
-          color: Colors.blueGrey,
+          // color: Colors.blueGrey,
         ),
       ),
     );
