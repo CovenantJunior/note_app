@@ -172,7 +172,7 @@ class _NotePageState extends State<NotePage> {
             Icon(
               Icons.bookmark_add_rounded,
               color: Colors.blueGrey,
-            )
+            ),
           ],
         ),
         titleTextStyle: const TextStyle(
@@ -182,8 +182,10 @@ class _NotePageState extends State<NotePage> {
           fontSize: 30
         ),
         centerTitle: true,
-        backgroundColor: Colors.blueGrey[50],
+        backgroundColor: Theme.of(context).colorScheme.background,
       ),
+
+      drawer: const Drawer(),
 
       body: notes.isNotEmpty  ? Padding(
         padding: const EdgeInsets.all(8.0),
