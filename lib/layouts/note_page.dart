@@ -166,7 +166,7 @@ class _NotePageState extends State<NotePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Text(
               "Notes",
