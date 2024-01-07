@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:note_app/component/note_drawer.dart';
 import 'package:note_app/models/note_database.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
@@ -186,7 +187,7 @@ class _NotePageState extends State<NotePage> {
         centerTitle: true,
       ),
 
-      drawer: const Drawer(),
+      drawer: const NoteDrawer(),
 
       body: notes.isNotEmpty  ? Padding(
         padding: const EdgeInsets.all(8.0),
