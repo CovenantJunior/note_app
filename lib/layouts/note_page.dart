@@ -176,8 +176,9 @@ class _NotePageState extends State<NotePage> {
                 fontSize: 30
               ),
             ),
+            SizedBox(width: 3),
             Icon(
-              Icons.bookmark_add_rounded,
+              Icons.bookmark_added_rounded,
               // color: Colors.blueGrey,
             ),
           ],
