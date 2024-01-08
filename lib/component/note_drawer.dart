@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/component/note_drawer_tile.dart';
+import 'package:note_app/layouts/note_page.dart';
+import 'package:note_app/layouts/note_settings.dart';
 
 class NoteDrawer extends StatefulWidget {
   const NoteDrawer({super.key});
@@ -24,7 +26,8 @@ class _NoteDrawerState extends State<NoteDrawer> {
             title: "Home",
             leading: const Icon(Icons.home),
             onTap: () {
-              Navigator.pushNamed(context, '/notes');
+              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const NotePage()));
             }
           ),
 
@@ -32,7 +35,8 @@ class _NoteDrawerState extends State<NoteDrawer> {
             title: "Settings",
             leading: const Icon(Icons.settings),
             onTap: () {
-              Navigator.pushNamed(context, '/settings');
+              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const NoteSettings()));
             }
           )
         ],
