@@ -32,7 +32,7 @@ class _NoteSettingsState extends State<NoteSettings> {
             const Text('Dark Mode'),
             CupertinoSwitch(
               value: Provider.of<ThemeProvider>(context, listen: false).isDarkMode,
-              onChanged: (value) => Provider.of<ThemeProvider>(context, listen: false).toggleTheme
+              onChanged: (value) => Provider.of<ThemeProvider>(context, listen: false).toggleTheme()
             )
           ],
         ),
