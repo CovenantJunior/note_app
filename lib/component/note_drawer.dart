@@ -28,10 +28,12 @@ class _NoteDrawerState extends State<NoteDrawer> {
             }
           ),
 
-          const NoteDrawerTile(
+          NoteDrawerTile(
             title: "Settings",
-            leading: Icon(Icons.settings),
-            onTap: NoteSettings()
+            leading: const Icon(Icons.settings),
+            onTap: () {
+              Navigator.pushNamed(context, '/settings');
+            }
           )
         ],
       ),
