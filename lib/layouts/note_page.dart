@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/component/note_drawer.dart';
+import 'package:note_app/component/note_options.dart';
 // import 'package:note_app/component/note_options.dart';
 import 'package:note_app/models/note_database.dart';
+import 'package:popover/popover.dart';
 import 'package:provider/provider.dart';
 
 class NotePage extends StatefulWidget {
@@ -119,11 +121,21 @@ class _NotePageState extends State<NotePage> {
                       fontSize: 16
                     ),
                   ),
-                  const IconButton(
-                    onPressed: null,
-                    icon: Icon(Icons.more_vert, color:
-                    Colors.blueGrey
-                  )
+                  Builder(
+                    builder: (context) {
+                      return IconButton(
+                        onPressed: () {
+                          showPopover(
+                            context: context,
+                            bodyBuilder: (context) => NoteOptions(id: note.id, note: note.note)
+                          );
+                        },
+                        icon: const Icon(
+                          Icons.more_vert, 
+                          color:Colors.blueGrey
+                        )
+                      );
+                    }
                   ),
                   /* NoteOptions(
                     id: note.id,
