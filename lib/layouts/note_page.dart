@@ -51,7 +51,7 @@ class _NotePageState extends State<NotePage> {
               } else {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text(
-                    'Copied and locked! Paste at your leisure!',
+                    'Oops, blank shot!',
                     style: TextStyle(
                       fontFamily: "Quicksand",
                       fontWeight: FontWeight.bold
