@@ -115,6 +115,8 @@ class _NotePageState extends State<NotePage> {
                 children: [
                   Text(
                     note.note,
+                    overflow: TextOverflow.clip,
+                    maxLines: 20,
                     style: const TextStyle(
                       fontFamily: "Quicksand",
                       fontWeight: FontWeight.w600,

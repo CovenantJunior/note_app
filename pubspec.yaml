@@ -41,6 +41,7 @@ dependencies:
   provider: ^6.1.1
   share_plus: ^7.2.1
   popover: ^0.2.9
+  liquid_pull_to_refresh: ^3.0.1
 
 dev_dependencies:
   flutter_test:
