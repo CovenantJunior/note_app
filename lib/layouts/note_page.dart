@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:note_app/component/note_drawer.dart';
 import 'package:note_app/component/note_options.dart';
 // import 'package:note_app/component/note_options.dart';
@@ -67,7 +68,7 @@ class _NotePageState extends State<NotePage> {
   }
 
   // Read
-  void readNotes() {
+  Future<void> readNotes() async {
     context.read<NoteDatabase>().fetchNote();
   }
 
@@ -100,55 +101,60 @@ class _NotePageState extends State<NotePage> {
 
       drawer: const NoteDrawer(),
 
-      body: notes.isNotEmpty  ? Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: ListView.builder(
-          itemCount: notes.length,
-          itemBuilder: (context, index) {
-          final note = notes[index];
-          return Card(
-            child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    note.note,
-                    overflow: TextOverflow.clip,
-                    maxLines: 20,
-                    style: const TextStyle(
-                      fontFamily: "Quicksand",
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16
+      body: notes.isNotEmpty  ? LiquidPullToRefresh(
+        onRefresh: () async {
+          readNotes();
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: ListView.builder(
+            itemCount: notes.length,
+            itemBuilder: (context, index) {
+            final note = notes[index];
+            return Card(
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      note.note,
+                      overflow: TextOverflow.clip,
+                      maxLines: 20,
+                      style: const TextStyle(
+                        fontFamily: "Quicksand",
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16
+                      ),
                     ),
-                  ),
-                  Builder(
-                    builder: (context) {
-                      return IconButton(
-                        onPressed: () {
-                          showPopover(
-                            width: 270,
-                            context: context,
-                            bodyBuilder: (context) => NoteOptions(id: note.id, note: note.note)
-                          );
-                        },
-                        icon: const Icon(
-                          Icons.more_vert, 
-                          color:Colors.blueGrey
-                        )
-                      );
-                    }
-                  ),
-                  /* NoteOptions(
-                    id: note.id,
-                    note: note.note
-                  ) */
-                ],
+                    Builder(
+                      builder: (context) {
+                        return IconButton(
+                          onPressed: () {
+                            showPopover(
+                              width: 270,
+                              context: context,
+                              bodyBuilder: (context) => NoteOptions(id: note.id, note: note.note)
+                            );
+                          },
+                          icon: const Icon(
+                            Icons.more_vert, 
+                            color:Colors.blueGrey
+                          )
+                        );
+                      }
+                    ),
+                    /* NoteOptions(
+                      id: note.id,
+                      note: note.note
+                    ) */
+                  ],
+                ),
               ),
-            ),
-          );
-        }),
+            );
+          }),
+        ),
       ) : const Center(child: Text(
           "No notes yet, tap the icon below to add",
           style: TextStyle(
