@@ -16,31 +16,36 @@ class _NoteSettingsState extends State<NoteSettings> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Settings"),
-        titleTextStyle: const TextStyle(
-          fontFamily: "Quicksand",
-          fontSize: 20,
-          fontWeight: FontWeight.bold
-        ),
-        centerTitle: true,
+        // Used AppBar just for the back icon
       ),
 
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const Text('Dark Mode'),
-            CupertinoSwitch(
-              value: isDark,
-              onChanged: (value) {
-                Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
-                setState(() {
-                  isDark = !isDark;
-                });
-              }
-            )
-          ],
+        padding: const EdgeInsets.all(8.0),
+        child: Card(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  'Dark Mode',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "Quicksand"
+                  ),
+                ),
+                CupertinoSwitch(
+                  value: isDark,
+                  onChanged: (value) {
+                    Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
+                    setState(() {
+                      isDark = !isDark;
+                    });
+                  }
+                )
+              ],
+            ),
+          ),
         ),
       ),
     );
