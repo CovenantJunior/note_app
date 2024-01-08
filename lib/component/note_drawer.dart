@@ -11,22 +11,24 @@ class NoteDrawer extends StatefulWidget {
 class _NoteDrawerState extends State<NoteDrawer> {
   @override
   Widget build(BuildContext context) {
-    return const Drawer(
+    return Drawer(
       semanticLabel: "Note Drawer Menu",
       child: Column(
         children: [
-          DrawerHeader(
+          const DrawerHeader(
             child: Icon(
               Icons.note_add_rounded
             ),
           ),
           NoteDrawerTile(
             title: "Home",
-            leading: Icon(Icons.home),
-            onTap: null
+            leading: const Icon(Icons.home),
+            onTap: () {
+              Navigator.pop(context);
+            }
           ),
 
-          NoteDrawerTile(
+          const NoteDrawerTile(
             title: "Settings",
             leading: Icon(Icons.settings),
             onTap: null
