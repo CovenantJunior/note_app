@@ -16,10 +16,13 @@ class NoteDrawerTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(title),
-      leading: leading,
-      onTap: onTap,
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      child: ListTile(
+        title: Text(title),
+        leading: leading,
+        onTap: onTap,
+      ),
     );
   }
 }

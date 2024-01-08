@@ -24,6 +24,12 @@ class _NoteDrawerState extends State<NoteDrawer> {
             title: "Home",
             leading: Icon(Icons.home),
             onTap: null
+          ),
+
+          NoteDrawerTile(
+            title: "Settings",
+            leading: Icon(Icons.settings),
+            onTap: null
           )
         ],
       ),
