@@ -124,6 +124,7 @@ class NoteOptions extends StatelessWidget {
       children: [
         IconButton(
           onPressed: () {
+            Navigator.pop(context);
             editNote(id, note);
           },
           icon: const Icon(
@@ -133,6 +134,7 @@ class NoteOptions extends StatelessWidget {
         ),
         IconButton(
           onPressed: () {
+            Navigator.pop(context);
             copy(note);
           },
           icon: const Icon(
@@ -142,6 +144,7 @@ class NoteOptions extends StatelessWidget {
         ),
         IconButton(
           onPressed: () {
+            Navigator.pop(context);
             share(note);
           },
           icon: const Icon(
@@ -151,6 +154,7 @@ class NoteOptions extends StatelessWidget {
         ),
         IconButton(
           onPressed: () {
+            Navigator.pop(context);
             deleteNote(id);
           },
           icon: const Icon(
