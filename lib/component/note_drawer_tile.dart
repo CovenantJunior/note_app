@@ -11,7 +11,7 @@ class NoteDrawerTile extends StatelessWidget {
     super.key,
     required this.title,
     required this.leading,
-    this.onTap
+    required this.onTap
   });
 
   @override
