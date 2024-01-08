@@ -48,6 +48,15 @@ class _NotePageState extends State<NotePage> {
                       fontWeight: FontWeight.bold
                     )
                   )));
+              } else {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text(
+                    'Copied and locked! Paste at your leisure!',
+                    style: TextStyle(
+                      fontFamily: "Quicksand",
+                      fontWeight: FontWeight.bold
+                    )
+                  )));
               }
             }
           )
