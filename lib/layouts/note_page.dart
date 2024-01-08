@@ -126,6 +126,7 @@ class _NotePageState extends State<NotePage> {
                       return IconButton(
                         onPressed: () {
                           showPopover(
+                            width: 270,
                             context: context,
                             bodyBuilder: (context) => NoteOptions(id: note.id, note: note.note)
                           );

@@ -31,7 +31,6 @@ class NoteOptions extends StatelessWidget {
           actions: [
             IconButton(
               icon: const Icon(Icons.save),
-              // color: Colors.blueGrey,
               onPressed: () {
                 String text = textController.text;
                 if (text.isNotEmpty) {
@@ -129,7 +128,7 @@ class NoteOptions extends StatelessWidget {
           },
           icon: const Icon(
             Icons.edit,
-            // color: Colors.blueGrey,
+            color: Colors.blueGrey,
           ),
         ),
         IconButton(
@@ -139,7 +138,7 @@ class NoteOptions extends StatelessWidget {
           },
           icon: const Icon(
             Icons.copy,
-            // color: Colors.blueGrey,
+            color: Colors.blueGrey,
           ),
         ),
         IconButton(
@@ -149,7 +148,7 @@ class NoteOptions extends StatelessWidget {
           },
           icon: const Icon(
             Icons.share,
-            // color: Colors.blueGrey,
+            color: Colors.blueGrey,
           ),
         ),
         IconButton(
@@ -159,7 +158,7 @@ class NoteOptions extends StatelessWidget {
           },
           icon: const Icon(
             Icons.delete,
-            // color: Colors.blueGrey,
+            color: Colors.blueGrey,
           ),
         ),
       ],
