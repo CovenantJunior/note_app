@@ -11,6 +11,7 @@ class NoteSettings extends StatefulWidget {
 }
 
 class _NoteSettingsState extends State<NoteSettings> {
+  late bool isDark = Provider.of<ThemeProvider>(context, listen: false).isDarkMode;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,8 +32,13 @@ class _NoteSettingsState extends State<NoteSettings> {
           children: [
             const Text('Dark Mode'),
             CupertinoSwitch(
-              value: Provider.of<ThemeProvider>(context, listen: false).isDarkMode,
-              onChanged: (value) => Provider.of<ThemeProvider>(context, listen: false).toggleTheme()
+              value: isDark,
+              onChanged: (value) {
+                Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
+                setState(() {
+                  isDark = !isDark;
+                });
+              }
             )
           ],
         ),
