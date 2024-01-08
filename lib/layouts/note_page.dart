@@ -155,13 +155,22 @@ class _NotePageState extends State<NotePage> {
             );
           }),
         ),
-      ) : const Center(child: Text(
-          "No notes yet, tap the icon below to add",
-          style: TextStyle(
-            // color: Colors.blueGrey,
+      ) : Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Center(child: Text(
+              "No notes yet, tap the icon below to add",
+              style: TextStyle(
+                // color: Colors.blueGrey,
+              ),
+            )
           ),
+          Image.asset(
+            'images/pointer.gif',
+            width: 100,
           )
-        ),
+        ],
+      ),
 
       floatingActionButton: FloatingActionButton(
         onPressed: createNote,
