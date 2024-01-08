@@ -36,6 +36,10 @@ class MyApp extends StatelessWidget {
       theme: Provider.of<ThemeProvider>(context).themeData,
       debugShowCheckedModeBanner: false,
       home: const NotePage(),
+      routes: {
+        'notes' : (context) => const NotePage(),
+        'settings' : (context) => const NoteSettings(),
+      },
     );
   }
 }

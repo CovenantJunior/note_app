@@ -24,14 +24,14 @@ class _NoteDrawerState extends State<NoteDrawer> {
             title: "Home",
             leading: const Icon(Icons.home),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.pushNamed(context, '/notes');
             }
           ),
 
           const NoteDrawerTile(
             title: "Settings",
             leading: Icon(Icons.settings),
-            onTap: null
+            onTap: NoteSettings()
           )
         ],
       ),
