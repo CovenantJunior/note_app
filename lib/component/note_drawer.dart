@@ -30,7 +30,6 @@ class _NoteDrawerState extends State<NoteDrawer> {
             IconButton(
               onPressed: () {
                 context.read<NoteDatabase>().deleteAllNotes();
-                Navigator.pop(context);
                 ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text(
                       'Poof! Gone like the wind',
@@ -39,6 +38,8 @@ class _NoteDrawerState extends State<NoteDrawer> {
                         fontWeight: FontWeight.bold
                       )
                     )));
+                Navigator.pop(context);
+                Navigator.pop(context);
               },
               icon: const Icon(
                 Icons.done,
@@ -91,7 +92,7 @@ class _NoteDrawerState extends State<NoteDrawer> {
 
           if (notes.isNotEmpty)
             NoteDrawerTile(
-              title: "Clean Notes",
+              title: "Clean All Notes",
               leading: const Icon(Icons.delete_forever_rounded),
               onTap: () {
                 deleteAllNotes();
