@@ -171,7 +171,7 @@ class _NotePageState extends State<NotePage> {
               ),
               const SizedBox(height: 100,),
               Padding(
-                padding: const EdgeInsets.only(left: 250.0),
+                padding: const EdgeInsets.only(left: 230.0),
                 child: Transform.rotate(
                   angle: 1.5708,
                   child: Image.asset(
