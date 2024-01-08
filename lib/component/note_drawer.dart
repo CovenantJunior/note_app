@@ -17,10 +17,11 @@ class _NoteDrawerState extends State<NoteDrawer> {
       semanticLabel: "Note Drawer Menu",
       child: Column(
         children: [
-          const DrawerHeader(
-            child: Icon(
-              Icons.note_add_rounded
-            ),
+          DrawerHeader(
+            child: Image.asset(
+                'images/note.png',
+                width: 70,
+              ),
           ),
           NoteDrawerTile(
             title: "Home",
