@@ -45,6 +45,7 @@ class _NotePageState extends State<NotePage> {
                     'Note secured',
                     style: TextStyle(
                       fontFamily: "Quicksand",
+                      fontWeight: FontWeight.bold
                     )
                   )));
               }
@@ -84,6 +85,7 @@ class _NotePageState extends State<NotePage> {
                     'Updated and fresh!',
                     style: TextStyle(
                       fontFamily: "Quicksand",
+                      fontWeight: FontWeight.bold
                     )
                   )));
               }
@@ -117,6 +119,7 @@ class _NotePageState extends State<NotePage> {
                     'Poof! Gone like the wind',
                     style: TextStyle(
                       fontFamily: "Quicksand",
+                      fontWeight: FontWeight.bold
                     )
                   )));
             },
@@ -155,6 +158,7 @@ class _NotePageState extends State<NotePage> {
           'Copied and locked! Paste at your leisure!',
           style: TextStyle(
             fontFamily: "Quicksand",
+            fontWeight: FontWeight.bold
           )
         )));
   }
