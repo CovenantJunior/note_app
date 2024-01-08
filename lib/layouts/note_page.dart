@@ -155,20 +155,33 @@ class _NotePageState extends State<NotePage> {
             );
           }),
         ),
-      ) : Column(
+      ) : Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Center(child: Text(
-              "No notes yet, tap the icon below to add",
-              style: TextStyle(
-                // color: Colors.blueGrey,
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const SizedBox(height: 200),
+              const Center(child: Text(
+                  "No notes yet, tap the icon below to add",
+                  style: TextStyle(
+                    // color: Colors.blueGrey,
+                  ),
+                )
               ),
-            )
+              const SizedBox(height: 100,),
+              Padding(
+                padding: const EdgeInsets.only(left: 250.0),
+                child: Transform.rotate(
+                  angle: 1.5708,
+                  child: Image.asset(
+                    'images/pointer.gif',
+                    width: 100,
+                  )
+                ),
+              )
+            ],
           ),
-          Image.asset(
-            'images/pointer.gif',
-            width: 100,
-          )
         ],
       ),
 
