@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/component/note_drawer.dart';
-import 'package:note_app/component/note_options.dart';
+// import 'package:note_app/component/note_options.dart';
 import 'package:note_app/models/note_database.dart';
 import 'package:provider/provider.dart';
 
@@ -119,10 +119,16 @@ class _NotePageState extends State<NotePage> {
                       fontSize: 16
                     ),
                   ),
-                  NoteOptions(
+                  const IconButton(
+                    onPressed: null,
+                    icon: Icon(Icons.more_vert, color:
+                    Colors.blueGrey
+                  )
+                  ),
+                  /* NoteOptions(
                     id: note.id,
                     note: note.note
-                  )
+                  ) */
                 ],
               ),
             ),
