@@ -77,7 +77,6 @@ class _NoteDrawerState extends State<NoteDrawer> {
             leading: const Icon(Icons.home),
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const NotePage()));
             }
           ),
 
