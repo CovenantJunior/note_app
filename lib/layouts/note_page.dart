@@ -29,6 +29,7 @@ class _NotePageState extends State<NotePage> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
+        title: const Text("Add a Note Title"),
         content: TextField(
           controller: textController,
         ),
